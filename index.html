@@ -65,9 +65,7 @@
       cursor: pointer;
       transition: transform 0.15s;
     }
-    .avatar:active {
-      transform: scale(0.94);
-    }
+    .avatar:active { transform: scale(0.94); }
 
     .account-pill {
       background: transparent;
@@ -83,10 +81,7 @@
       gap: 8px;
       transition: background 0.2s;
     }
-
-    .account-pill:active {
-      background: rgba(255, 255, 255, 0.08);
-    }
+    .account-pill:active { background: rgba(255, 255, 255, 0.08); }
 
     .nav-icons {
       display: flex;
@@ -104,12 +99,9 @@
       opacity: 0.85;
       transition: opacity 0.2s;
     }
+    .nav-icon:active { opacity: 0.5; }
 
-    .nav-icon:active {
-      opacity: 0.5;
-    }
-
-    /* PROFILE MODAL (меню) */
+    /* Profile modal */
     .profile-modal {
       position: fixed;
       top: 0;
@@ -129,10 +121,7 @@
       visibility: hidden;
       transition: opacity 0.2s ease, visibility 0.2s;
     }
-    .profile-modal.open {
-      opacity: 1;
-      visibility: visible;
-    }
+    .profile-modal.open { opacity: 1; visibility: visible; }
     .modal-card {
       background: #1c1c1e;
       width: 90%;
@@ -140,8 +129,6 @@
       border-radius: 32px;
       padding: 24px 20px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      backdrop-filter: blur(0);
-      transition: transform 0.2s;
     }
     .modal-header {
       display: flex;
@@ -162,17 +149,13 @@
       font-size: 24px;
       font-weight: 700;
     }
-    .modal-userinfo {
-      flex: 1;
-    }
-    .modal-userinfo h4 {
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .modal-userinfo p {
-      font-size: 13px;
-      color: #aaa;
-      margin-top: 4px;
+    .modal-userinfo { flex: 1; }
+    .modal-userinfo h4 { font-size: 18px; font-weight: 700; }
+    .modal-userinfo p { font-size: 13px; color: #aaa; margin-top: 4px; }
+    .close-modal {
+      margin-left: auto;
+      cursor: pointer;
+      padding: 8px;
     }
     .modal-menu-item {
       display: flex;
@@ -180,51 +163,136 @@
       gap: 16px;
       padding: 14px 0;
       cursor: pointer;
-      transition: background 0.1s;
       border-radius: 16px;
       padding-left: 8px;
     }
-    .modal-menu-item:active {
-      background: rgba(255,255,255,0.08);
-    }
+    .modal-menu-item:active { background: rgba(255,255,255,0.08); }
     .modal-menu-item.logout-item {
       margin-top: 12px;
       border-top: 1px solid #2e2e32;
       padding-top: 18px;
     }
-    .logout-item .menu-text {
-      color: #ff5f5f;
-      font-weight: 600;
-    }
-    .menu-text {
-      font-size: 16px;
-      font-weight: 500;
-    }
-    .close-modal {
-      margin-left: auto;
-      cursor: pointer;
-      padding: 8px;
-    }
+    .logout-item .menu-text { color: #ff5f5f; font-weight: 600; }
+    .menu-text { font-size: 16px; font-weight: 500; }
 
-    /* Card Slider */
-    .card-slider-wrap {
-      padding: 0 20px;
-      overflow: hidden;
+    /* Action modals */
+    .action-modal {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      right: 0;
+      background: #1c1c1e;
+      border-radius: 28px 28px 0 0;
+      z-index: 450;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      padding: 24px 20px 30px;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
     }
-
-    .card-slider {
+    .action-modal.open { transform: translateY(0); }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      right: 0;
+      height: 100dvh;
+      background: rgba(0,0,0,0.7);
+      z-index: 440;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .action-modal h3 {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .action-modal .field {
+      background: #2c2c2e;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 16px;
       display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 4px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .action-modal .field label { color: #aaa; font-size: 14px; }
+    .action-modal .field span { font-weight: 600; }
+    .action-modal button {
+      background: #39d353;
+      border: none;
+      width: 100%;
+      padding: 16px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    .action-modal .close-action {
+      text-align: center;
+      margin-top: 12px;
+      color: #ff5f5f;
+      cursor: pointer;
     }
 
-    .card-slider::-webkit-scrollbar {
-      display: none;
+    /* Login screen */
+    .login-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      right: 0;
+      height: 100dvh;
+      background: #0e0e0e;
+      z-index: 600;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 24px;
+      transition: opacity 0.3s;
+    }
+    .login-screen.hidden { display: none; }
+    .login-screen h2 {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 28px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .login-input {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 60px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      color: white;
+      font-size: 16px;
+      width: 100%;
+    }
+    .login-btn {
+      background: #39d353;
+      border: none;
+      border-radius: 60px;
+      padding: 16px;
+      font-weight: 700;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
     }
 
+    /* Card slider */
+    .card-slider-wrap { padding: 0 20px; overflow: hidden; }
+    .card-slider { display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; padding-bottom: 4px; }
+    .card-slider::-webkit-scrollbar { display: none; }
     .bank-card {
       flex-shrink: 0;
       width: calc(100vw - 60px);
@@ -237,464 +305,70 @@
       cursor: pointer;
       transition: transform 0.15s;
     }
-
-    .bank-card:active {
-      transform: scale(0.98);
-    }
-
+    .bank-card:active { transform: scale(0.98); }
     .card-bg {
       position: absolute;
       inset: 0;
       background: linear-gradient(160deg, #0d4a5a 0%, #0a2e3a 40%, #051820 100%);
     }
+    .card-bg.usd { background: linear-gradient(160deg, #1f5e3a 0%, #0f3a2a 40%, #062010 100%); }
+    .card-city { position: absolute; bottom: 0; left: 0; right: 0; height: 100%; opacity: 0.45; }
+    .card-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%); }
+    .card-settings { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; opacity: 0.8; }
+    .card-title { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); text-align: center; }
+    .card-city-name { font-family: 'Unbounded', sans-serif; font-size: 34px; font-weight: 700; color: #fff; line-height: 1; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5); }
+    .card-city-sub { font-size: 11px; font-weight: 500; color: rgba(255, 255, 255, 0.75); letter-spacing: 0.5px; }
+    .card-bottom { position: absolute; bottom: 16px; left: 18px; right: 18px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .card-label { font-size: 11px; color: rgba(255, 255, 255, 0.7); margin-bottom: 4px; }
+    .card-number { font-family: 'Unbounded', sans-serif; font-size: 13px; color: #fff; }
+    .card-logo { display: flex; align-items: center; }
+    .mc-circle { width: 28px; height: 28px; border-radius: 50%; }
+    .mc-red { background: #eb001b; margin-right: -10px; }
+    .mc-orange { background: #f79e1b; opacity: 0.9; }
+    .card-peek { flex-shrink: 0; width: 50px; height: 200px; border-radius: 20px; background: linear-gradient(135deg, #1e3a4a, #0d2030); scroll-snap-align: start; opacity: 0.6; }
 
-    .card-city {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      opacity: 0.45;
-    }
+    .dots { display: flex; justify-content: center; gap: 6px; margin: 14px 0 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, 0.25); transition: all 0.3s; }
+    .dot.active { background: #fff; width: 18px; border-radius: 4px; }
 
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
-    }
+    .balance-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 22px 18px; }
+    .balance-label { font-size: 14px; color: #888; font-weight: 500; }
+    .balance-amount { font-family: 'Unbounded', sans-serif; font-size: 22px; font-weight: 700; color: #fff; }
+    .balance-currency { font-size: 13px; font-weight: 400; color: #888; margin-left: 4px; }
 
-    .card-settings {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.8;
-    }
+    .actions { display: flex; justify-content: space-around; padding: 0 16px 24px; }
+    .action-btn { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; }
+    .action-icon { width: 58px; height: 58px; border-radius: 50%; background: #39d353; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, background 0.15s; box-shadow: 0 4px 20px rgba(57, 211, 83, 0.3); }
+    .action-btn:active .action-icon { transform: scale(0.91); background: #2bb544; }
+    .action-label { font-size: 12px; font-weight: 500; color: rgba(255, 255, 255, 0.7); }
 
-    .card-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -55%);
-      text-align: center;
-    }
+    .history-section { background: #1a1a1a; border-radius: 24px 24px 0 0; padding: 20px 20px 0; min-height: 300px; }
+    .history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .history-title { font-family: 'Unbounded', sans-serif; font-size: 16px; font-weight: 600; }
+    .history-controls { display: flex; gap: 10px; }
+    .history-btn { width: 38px; height: 38px; border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .history-btn:active { background: rgba(255, 255, 255, 0.12); }
+    .tx-date-divider { font-size: 12px; font-weight: 600; color: #39d353; margin: 16px 0 10px 0; letter-spacing: 0.5px; }
+    .tx-item { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid #2a2a2a; cursor: pointer; }
+    .tx-item:active { opacity: 0.6; }
+    .tx-icon { width: 44px; height: 44px; border-radius: 14px; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tx-info { flex: 1; }
+    .tx-name { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .tx-date { font-size: 12px; color: #888; }
+    .tx-amount { font-family: 'Unbounded', sans-serif; font-size: 14px; font-weight: 600; color: #ff5f5f; }
+    .tx-amount.positive { color: #39d353; }
 
-    .card-city-name {
-      font-family: 'Unbounded', sans-serif;
-      font-size: 34px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    }
+    .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; background: #111; border-top: 1px solid #2a2a2a; display: flex; justify-content: space-around; padding: 10px 0 20px; z-index: 100; }
+    .nav-tab { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; padding: 2px 16px; }
+    .nav-tab-label { font-size: 10px; font-weight: 600; color: #888; }
+    .nav-tab.active .nav-tab-label { color: #39d353; }
+    .nav-tab-icon { opacity: 0.5; transition: opacity 0.2s; }
+    .nav-tab.active .nav-tab-icon { opacity: 1; }
 
-    .card-city-sub {
-      font-size: 11px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.75);
-      letter-spacing: 0.5px;
-    }
+    .qr-fab { position: fixed; bottom: 88px; right: calc(50% - 210px); width: 50px; height: 50px; background: #39d353; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(57, 211, 83, 0.4); cursor: pointer; z-index: 101; transition: transform 0.15s; }
+    .qr-fab:active { transform: scale(0.92); }
 
-    .card-bottom {
-      position: absolute;
-      bottom: 16px;
-      left: 18px;
-      right: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .card-label {
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 4px;
-    }
-
-    .card-number {
-      font-family: 'Unbounded', sans-serif;
-      font-size: 13px;
-      color: #fff;
-    }
-
-    .card-logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .mc-circle {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-    }
-
-    .mc-red {
-      background: #eb001b;
-      margin-right: -10px;
-    }
-
-    .mc-orange {
-      background: #f79e1b;
-      opacity: 0.9;
-    }
-
-    .card-peek {
-      flex-shrink: 0;
-      width: 50px;
-      height: 200px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #1e3a4a, #0d2030);
-      scroll-snap-align: start;
-      opacity: 0.6;
-    }
-
-    .dots {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      margin: 14px 0 8px;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.25);
-      transition: all 0.3s;
-    }
-
-    .dot.active {
-      background: #fff;
-      width: 18px;
-      border-radius: 4px;
-    }
-
-    .balance-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 22px 18px;
-    }
-
-    .balance-label {
-      font-size: 14px;
-      color: #888;
-      font-weight: 500;
-    }
-
-    .balance-amount {
-      font-family: 'Unbounded', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .balance-currency {
-      font-size: 13px;
-      font-weight: 400;
-      color: #888;
-      margin-left: 4px;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: space-around;
-      padding: 0 16px 24px;
-    }
-
-    .action-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-    }
-
-    .action-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #39d353;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.15s, background 0.15s;
-      box-shadow: 0 4px 20px rgba(57, 211, 83, 0.3);
-    }
-
-    .action-btn:active .action-icon {
-      transform: scale(0.91);
-      background: #2bb544;
-    }
-
-    .action-label {
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .history-section {
-      background: #1a1a1a;
-      border-radius: 24px 24px 0 0;
-      padding: 20px 20px 0;
-      min-height: 300px;
-    }
-
-    .history-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .history-title {
-      font-family: 'Unbounded', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .history-controls {
-      display: flex;
-      gap: 10px;
-    }
-
-    .history-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.06);
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .history-btn:active {
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .history-btn.active {
-      background: #5b5bd6;
-    }
-
-    .tx-date-divider {
-      font-size: 12px;
-      font-weight: 600;
-      color: #39d353;
-      margin: 16px 0 10px 0;
-      letter-spacing: 0.5px;
-    }
-
-    .tx-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid #2a2a2a;
-      cursor: pointer;
-      transition: opacity 0.15s;
-    }
-
-    .tx-item:active {
-      opacity: 0.6;
-    }
-
-    .tx-item:last-child {
-      border-bottom: none;
-    }
-
-    .tx-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .tx-info {
-      flex: 1;
-    }
-
-    .tx-name {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-
-    .tx-date {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .tx-amount {
-      font-family: 'Unbounded', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #ff5f5f;
-    }
-
-    .tx-amount.positive {
-      color: #39d353;
-    }
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 430px;
-      background: #111;
-      border-top: 1px solid #2a2a2a;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0 20px;
-      z-index: 100;
-    }
-
-    .nav-tab {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-      padding: 2px 16px;
-    }
-
-    .nav-tab-label {
-      font-size: 10px;
-      font-weight: 600;
-      color: #888;
-    }
-
-    .nav-tab.active .nav-tab-label {
-      color: #39d353;
-    }
-
-    .nav-tab-icon {
-      opacity: 0.5;
-      transition: opacity 0.2s;
-    }
-
-    .nav-tab.active .nav-tab-icon {
-      opacity: 1;
-    }
-
-    .qr-fab {
-      position: fixed;
-      bottom: 88px;
-      right: calc(50% - 210px);
-      width: 50px;
-      height: 50px;
-      background: #39d353;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(57, 211, 83, 0.4);
-      cursor: pointer;
-      z-index: 101;
-      font-size: 10px;
-      font-weight: 700;
-      color: #000;
-      font-family: 'Unbounded', sans-serif;
-      flex-direction: column;
-      gap: 1px;
-      transition: transform 0.15s;
-    }
-
-    .qr-fab:active {
-      transform: scale(0.92);
-    }
-
-    .toast-error {
-      position: fixed;
-      bottom: 30%;
-      left: 50%;
-      transform: translateX(-50%) scale(0.9);
-      background: #000000dd;
-      backdrop-filter: blur(12px);
-      color: #ff9f6e;
-      font-weight: 600;
-      padding: 14px 22px;
-      border-radius: 60px;
-      font-size: 15px;
-      z-index: 200;
-      white-space: nowrap;
-      font-family: 'Manrope', sans-serif;
-      border-left: 4px solid #ff4d4d;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .toast-error.show {
-      opacity: 1;
-      transform: translateX(-50%) scale(1);
-    }
-
-    /* logout overlay */
-    .logout-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      max-width: 430px;
-      margin: 0 auto;
-      right: 0;
-      height: 100dvh;
-      background: #0e0e0e;
-      z-index: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Unbounded', sans-serif;
-      text-align: center;
-      padding: 20px;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .logout-overlay.hidden {
-      display: none;
-    }
-
-    .logout-icon {
-      font-size: 64px;
-      background: #2a2a2a;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logout-text {
-      font-size: 24px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .logout-sub {
-      color: #aaa;
-      font-size: 15px;
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .bank-card { animation: slideUp 0.4s ease both; }
     .balance-row { animation: slideUp 0.5s 0.05s ease both; opacity: 0; animation-fill-mode: forwards; }
     .actions { animation: slideUp 0.5s 0.1s ease both; opacity: 0; animation-fill-mode: forwards; }
@@ -703,169 +377,220 @@
 </head>
 <body>
 
-<div class="logout-overlay hidden" id="logoutOverlay">
-  <div class="logout-icon">👋</div>
-  <div class="logout-text">Ви вийшли</div>
-  <div class="logout-sub">До зустрічі в MyBank!</div>
+<!-- Login Screen -->
+<div id="loginScreen" class="login-screen hidden">
+  <h2>Вхід в MyBank</h2>
+  <input type="text" id="loginPhone" class="login-input" placeholder="Номер телефону" value="">
+  <input type="password" id="loginPassword" class="login-input" placeholder="Пароль" value="">
+  <button class="login-btn" id="loginSubmitBtn">Увійти</button>
 </div>
 
-<!-- Профільне модальне меню -->
+<!-- Modals for actions -->
+<div id="modalOverlay" class="modal-overlay"></div>
+
+<div id="popovnytyModal" class="action-modal">
+  <h3>💰 Поповнити картку</h3>
+  <div class="field"><label>Картка отримувача</label><span>0845 | UA49···3312441</span></div>
+  <div class="field"><label>Сума поповнення</label><span>0.00 UAH</span></div>
+  <button>Поповнити (демо)</button>
+  <div class="close-action">Скасувати</div>
+</div>
+
+<div id="perekazatyModal" class="action-modal">
+  <h3>💸 Переказ коштів</h3>
+  <div class="field"><label>Отримувач</label><span>Картка або телефон</span></div>
+  <div class="field"><label>Сума</label><span>00.00 UAH</span></div>
+  <button>Переказати (демо)</button>
+  <div class="close-action">Скасувати</div>
+</div>
+
+<div id="mobileModal" class="action-modal">
+  <h3>📱 Поповнення мобільного</h3>
+  <div class="field"><label>Номер телефону</label><span>+380 96 242 46 48</span></div>
+  <div class="field"><label>Сума</label><span>120 UAH</span></div>
+  <button>Поповнити (демо)</button>
+  <div class="close-action">Скасувати</div>
+</div>
+
+<div id="platezhiModal" class="action-modal">
+  <h3>🧾 Платежі</h3>
+  <div class="field"><label>Категорія</label><span>Комунальні платежі</span></div>
+  <div class="field"><label>Сума</label><span>0.00 UAH</span></div>
+  <button>Сплатити (демо)</button>
+  <div class="close-action">Скасувати</div>
+</div>
+
+<div id="qrModal" class="action-modal">
+  <h3>📷 QR-код</h3>
+  <div class="field"><label>Сканування</label><span>Наведіть камеру на QR</span></div>
+  <button>Сканувати (демо)</button>
+  <div class="close-action">Скасувати</div>
+</div>
+
 <div id="profileModal" class="profile-modal">
   <div class="modal-card">
     <div class="modal-header">
       <div class="modal-avatar-big">Н</div>
-      <div class="modal-userinfo">
-        <h4>Подобівський Василь</h4>
-        <p>+380 96 242 46 48</p>
-      </div>
-      <div class="close-modal" id="closeModalBtn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </div>
+      <div class="modal-userinfo"><h4>Подобівський Василь</h4><p>+380 96 242 46 48</p></div>
+      <div class="close-modal" id="closeModalBtn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
     </div>
-    <div class="modal-menu-item" data-action="settings">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-      <span class="menu-text">Налаштування</span>
-    </div>
-    <div class="modal-menu-item" data-action="security">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span class="menu-text">Безпека</span>
-    </div>
-    <div class="modal-menu-item" data-action="map">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span class="menu-text">Мапа</span>
-    </div>
-    <div class="modal-menu-item" data-action="terms">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M4 4h16v16H4zM8 8h8M8 12h6M8 16h4"/></svg>
-      <span class="menu-text">Умови та правила</span>
-    </div>
-    <div class="modal-menu-item logout-item" id="logoutFromModalBtn">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5f5f" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-      <span class="menu-text" style="color:#ff5f5f;">Вийти</span>
-    </div>
+    <div class="modal-menu-item" data-action="settings"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="menu-text">Налаштування</span></div>
+    <div class="modal-menu-item" data-action="security"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg><span class="menu-text">Безпека</span></div>
+    <div class="modal-menu-item" data-action="map"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="menu-text">Мапа</span></div>
+    <div class="modal-menu-item" data-action="terms"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M4 4h16v16H4zM8 8h8M8 12h6M8 16h4"/></svg><span class="menu-text">Умови та правила</span></div>
+    <div class="modal-menu-item logout-item" id="logoutFromModalBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5f5f" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span class="menu-text" style="color:#ff5f5f;">Вийти</span></div>
   </div>
 </div>
 
 <div id="appContent">
-  <div class="status-bar">
-    <span>16:03</span>
-    <div class="status-icons">
-      <svg width="16" height="12" viewBox="0 0 16 12" fill="white"><rect x="0" y="4" width="3" height="8" rx="1" opacity=".4"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="1" opacity=".6"/><rect x="9" y="0" width="3" height="12" rx="1"/><rect x="13.5" y="0" width="2.5" height="12" rx="1"/></svg>
-      <svg width="16" height="12" viewBox="0 0 16 12" fill="white"><path d="M8 2.4C10.5 2.4 12.7 3.4 14.3 5L16 3.2C13.9 1.2 11.1 0 8 0C4.9 0 2.1 1.2 0 3.2L1.7 5C3.3 3.4 5.5 2.4 8 2.4Z" opacity=".4"/><path d="M8 5.6C9.7 5.6 11.2 6.3 12.3 7.4L14 5.6C12.4 4.1 10.3 3.2 8 3.2C5.7 3.2 3.6 4.1 2 5.6L3.7 7.4C4.8 6.3 6.3 5.6 8 5.6Z" opacity=".7"/><circle cx="8" cy="10" r="2"/></svg>
-      <span style="font-size:12px;font-weight:700">63%</span>
-    </div>
-  </div>
-
-  <div class="top-nav">
-    <div class="avatar" id="avatarBtn">Н</div>
-    <div class="account-pill" id="accountPillBtn">
-      Усі рахунки
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-    <div class="nav-icons">
-      <div class="nav-icon" id="notifBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-      <div class="nav-icon" id="profileBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/><circle cx="12" cy="8" r="1" fill="white" stroke="none"/></svg></div>
-    </div>
-  </div>
+  <div class="status-bar"><span>16:03</span><div class="status-icons">...</div></div>
+  <div class="top-nav"><div class="avatar" id="avatarBtn">Н</div><div class="account-pill">Усі рахунки<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div><div class="nav-icons"><div class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/><circle cx="12" cy="8" r="1" fill="white" stroke="none"/></svg></div></div></div>
 
   <div class="card-slider-wrap"><div class="card-slider" id="cardSlider">
-    <div class="bank-card"><div class="card-bg"></div><svg class="card-city" viewBox="0 0 370 200" preserveAspectRatio="xMidYMax meet" fill="none"><defs><linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a6080"/><stop offset="100%" stop-color="#0a2a3a"/></linearGradient></defs><rect width="370" height="200" fill="url(#skyGrad)"/><rect x="0" y="120" width="30" height="80" fill="#0d3a4a"/><rect x="10" y="100" width="15" height="100" fill="#0e4055"/><rect x="30" y="110" width="25" height="90" fill="#0a3045"/><rect x="50" y="90" width="8" height="110" fill="#0d3a4a"/><rect x="55" y="80" width="20" height="120" fill="#0e4055"/><ellipse cx="85" cy="70" rx="18" ry="22" fill="#0d4560"/><rect x="78" y="70" width="14" height="60" fill="#0d4560"/><rect x="100" y="50" width="12" height="120" fill="#0f4a62"/><polygon points="100,50 106,30 112,50" fill="#0f5270"/><ellipse cx="160" cy="55" rx="28" ry="35" fill="#0e5070"/><rect x="148" y="55" width="24" height="90" fill="#0e5070"/><rect x="158" y="20" width="4" height="20" fill="#1a6080"/><rect x="154" y="26" width="12" height="3" fill="#1a6080"/><rect x="195" y="80" width="30" height="120" fill="#0d3a4a"/><rect x="205" y="60" width="14" height="140" fill="#0e4055"/><rect x="230" y="100" width="25" height="100" fill="#0a3045"/><rect x="270" y="90" width="30" height="110" fill="#0e4055"/><rect x="310" y="110" width="35" height="90" fill="#0a3045"/><rect x="0" y="160" width="370" height="40" fill="#071820"/><rect x="102" y="60" width="4" height="6" rx="2" fill="rgba(255,255,180,.4)"/><rect x="108" y="60" width="4" height="6" rx="2" fill="rgba(255,255,180,.3)"/><rect x="155" y="75" width="5" height="7" rx="2" fill="rgba(255,255,180,.3)"/><rect x="163" y="75" width="5" height="7" rx="2" fill="rgba(255,255,180,.4)"/></svg><div class="card-overlay"></div><div class="card-settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><div class="card-title"><div class="card-city-name">Львів</div><div class="card-city-sub">це Україна</div></div><div class="card-bottom"><div><div class="card-label">Картка для виплат</div><div class="card-number">•••• 0845 &nbsp; 05/29</div></div><div class="card-logo"><div class="mc-circle mc-red"></div><div class="mc-circle mc-orange"></div></div></div></div>
+    <div class="bank-card" data-card-type="uah"><div class="card-bg"></div><svg class="card-city" viewBox="0 0 370 200" preserveAspectRatio="xMidYMax meet" fill="none">...</svg><div class="card-overlay"></div><div class="card-settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><div class="card-title"><div class="card-city-name">Львів</div><div class="card-city-sub">гривнева</div></div><div class="card-bottom"><div><div class="card-label">Картка для виплат</div><div class="card-number">•••• 0845 &nbsp; 05/29</div></div><div class="card-logo"><div class="mc-circle mc-red"></div><div class="mc-circle mc-orange"></div></div></div></div>
+    <div class="bank-card" data-card-type="usd"><div class="card-bg usd"></div><div class="card-overlay"></div><div class="card-settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><div class="card-title"><div class="card-city-name">Доларова</div><div class="card-city-sub">Premium</div></div><div class="card-bottom"><div><div class="card-label">Картка для виплат</div><div class="card-number">•••• 2390 &nbsp; 07/28</div></div><div class="card-logo"><div class="mc-circle mc-red"></div><div class="mc-circle mc-orange"></div></div></div></div>
     <div class="card-peek"></div>
   </div></div>
-  <div class="dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="dots" id="dotsContainer"><div class="dot active"></div><div class="dot"></div></div>
 
-  <div class="balance-row"><span class="balance-label">Баланс</span><div><span class="balance-amount">8 190.00</span><span class="balance-currency">UAH</span></div></div>
+  <div class="balance-row"><span class="balance-label" id="balanceLabel">Баланс (UAH)</span><div><span class="balance-amount" id="balanceAmount">7 350.00</span><span class="balance-currency" id="balanceCurrency">UAH</span></div></div>
 
   <div class="actions">
-    <div class="action-btn"><div class="action-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><polyline points="7 7 12 12 17 7"/><polyline points="7 12 12 17 17 12"/></svg></div><span class="action-label">Поповнити</span></div>
-    <div class="action-btn"><div class="action-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><polyline points="7 7 12 12 17 7" transform="rotate(90, 12, 12)"/><polyline points="7 12 12 17 17 12" transform="rotate(90, 12, 12)"/></svg></div><span class="action-label">Переказати</span></div>
-    <div class="action-btn"><div class="action-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg></div><span class="action-label">Мобільний</span></div>
-    <div class="action-btn"><div class="action-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M6 7h8a4 4 0 0 1 0 8H6"/><path d="M6 11h8a4 4 0 0 1 0 8H6"/><line x1="4" y1="11" x2="12" y2="11"/><line x1="4" y1="15" x2="12" y2="15"/></svg></div><span class="action-label">Платежі</span></div>
+    <div class="action-btn" data-modal="popovnytyModal"><div class="action-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><polyline points="7 7 12 12 17 7"/><polyline points="7 12 12 17 17 12"/></svg></div><span class="action-label">Поповнити</span></div>
+    <div class="action-btn" data-modal="perekazatyModal"><div class="action-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><polyline points="7 7 12 12 17 7" transform="rotate(90, 12, 12)"/><polyline points="7 12 12 17 17 12" transform="rotate(90, 12, 12)"/></svg></div><span class="action-label">Переказати</span></div>
+    <div class="action-btn" data-modal="mobileModal"><div class="action-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg></div><span class="action-label">Мобільний</span></div>
+    <div class="action-btn" data-modal="platezhiModal"><div class="action-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M6 7h8a4 4 0 0 1 0 8H6"/><path d="M6 11h8a4 4 0 0 1 0 8H6"/><line x1="4" y1="11" x2="12" y2="11"/><line x1="4" y1="15" x2="12" y2="15"/></svg></div><span class="action-label">Платежі</span></div>
   </div>
 
-  <div class="history-section">
+  <div class="history-section" id="historySection">
     <div class="history-header"><span class="history-title">Історія</span><div class="history-controls"><button class="history-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="history-btn active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></button></div></div>
-    <div class="tx-date-divider">14 травня</div><div class="tx-item"><div class="tx-icon" style="background:rgba(255,80,80,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6060" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="tx-info"><div class="tx-name">Львівобленерго</div><div class="tx-date">14 травня</div></div><div class="tx-amount">−3 100.00 UAH</div></div>
-    <div class="tx-date-divider">11 травня</div><div class="tx-item"><div class="tx-icon" style="background:rgba(255,140,0,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff8c00" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg></div><div class="tx-info"><div class="tx-name">Lifecell</div><div class="tx-date">11 травня</div></div><div class="tx-amount">−270.00 UAH</div></div>
-    <div class="tx-date-divider">10 травня</div><div class="tx-item"><div class="tx-icon" style="background:rgba(255,140,0,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff8c00" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg></div><div class="tx-info"><div class="tx-name">Lifecell (абонплата)</div><div class="tx-date">10 травня</div></div><div class="tx-amount">−2 040.00 UAH</div></div>
-    <div class="tx-item"><div class="tx-icon" style="background:rgba(255,80,80,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff6060" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div><div class="tx-info"><div class="tx-name">Нова Пошта</div><div class="tx-date">10 травня</div></div><div class="tx-amount">−2 400.00 UAH</div></div>
-    <div class="tx-date-divider">9 травня</div><div class="tx-item"><div class="tx-icon" style="background:rgba(57,211,83,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39d353" stroke-width="2"><polyline points="7 17 12 12 17 17"/><polyline points="7 12 12 7 17 12"/></svg></div><div class="tx-info"><div class="tx-name">Надходження</div><div class="tx-date">9 травня</div></div><div class="tx-amount positive">+18 100.00 UAH</div></div>
-    <div class="tx-item"><div class="tx-icon" style="background:rgba(255,150,0,.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff9600" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><div class="tx-info"><div class="tx-name">Alibaba</div><div class="tx-date">9 травня</div></div><div class="tx-amount">−2 100.00 UAH</div></div>
+    <div id="transactionsList"></div>
   </div>
-  <div class="qr-fab"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="5" y="5" width="3" height="3" fill="#000"/><rect x="16" y="5" width="3" height="3" fill="#000"/><rect x="5" y="16" width="3" height="3" fill="#000"/><line x1="14" y1="14" x2="14" y2="14" stroke-width="3"/><line x1="17" y1="14" x2="21" y2="14"/><line x1="14" y1="17" x2="14" y2="21"/><line x1="17" y1="17" x2="21" y2="17"/><line x1="17" y1="21" x2="21" y2="21"/></svg></div>
-  <nav class="bottom-nav"><div class="nav-tab active"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39d353" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span class="nav-tab-label" style="color:#39d353">Головний</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="nav-tab-label">Кредити</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div><span class="nav-tab-label">Конверти</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><span class="nav-tab-label">Привіт</span></div><div class="nav-tab" id="moreTabBtn"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="18" r="2"/></svg></div><span class="nav-tab-label">Ще</span></div></nav>
+  <div class="qr-fab" data-modal="qrModal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="5" y="5" width="3" height="3" fill="#000"/><rect x="16" y="5" width="3" height="3" fill="#000"/><rect x="5" y="16" width="3" height="3" fill="#000"/><line x1="14" y1="14" x2="14" y2="14" stroke-width="3"/><line x1="17" y1="14" x2="21" y2="14"/><line x1="14" y1="17" x2="14" y2="21"/><line x1="17" y1="17" x2="21" y2="17"/><line x1="17" y1="21" x2="21" y2="21"/></svg></div>
+  <nav class="bottom-nav"><div class="nav-tab active"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#39d353" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span class="nav-tab-label">Головний</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="nav-tab-label">Кредити</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div><span class="nav-tab-label">Конверти</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><span class="nav-tab-label">Привіт</span></div><div class="nav-tab"><div class="nav-tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="18" r="2"/></svg></div><span class="nav-tab-label">Ще</span></div></nav>
 </div>
 
-<div class="toast-error" id="errorToast">❗ Ой, халепа! Технічні проблеми. Спробуйте пізніше.</div>
-
 <script>
-  function showTechError() {
-    const toast = document.getElementById('errorToast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2200);
+  // Дані транзакцій (виправлено порядок: спочатку +18 000, потім -2100)
+  const transactions = {
+    uah: [
+      { date: '15 травня', name: 'Нова Пошта', amount: -840 },
+      { date: '14 травня', name: 'Львівобленерго', amount: -3100 },
+      { date: '11 травня', name: 'Lifecell', amount: -270 },
+      { date: '10 травня', name: 'Lifecell (абонплата)', amount: -2040 },
+      { date: '10 травня', name: 'Нова Пошта', amount: -2400 },
+      { date: '9 травня', name: 'Надходження', amount: 18000 },
+      { date: '9 травня', name: 'Alibaba', amount: -2100 }
+    ],
+    usd: [
+      { date: '12 травня', name: 'Каса Місто Сколе', amount: -2500 },
+      { date: '5 травня', name: 'Надходження USD', amount: 2660 }
+    ]
+  };
+  let currentCard = 'uah';
+
+  function renderHistory() {
+    const container = document.getElementById('transactionsList');
+    const txList = [...transactions[currentCard]];
+    const grouped = {};
+    txList.forEach(tx => { if (!grouped[tx.date]) grouped[tx.date] = []; grouped[tx.date].push(tx); });
+    const order = { '15 травня':5, '14 травня':4, '12 травня':3, '11 травня':2, '10 травня':1, '9 травня':0, '5 травня':-1 };
+    const dates = Object.keys(grouped).sort((a,b) => (order[b]||0) - (order[a]||0));
+    let html = '';
+    dates.forEach(date => {
+      html += `<div class="tx-date-divider">${date}</div>`;
+      grouped[date].forEach(tx => {
+        const isPositive = tx.amount > 0;
+        const sign = isPositive ? '+' : '−';
+        const absVal = Math.abs(tx.amount).toFixed(2);
+        const currency = currentCard === 'usd' ? 'USD' : 'UAH';
+        html += `<div class="tx-item"><div class="tx-icon" style="background:${isPositive ? 'rgba(57,211,83,.12)' : 'rgba(255,80,80,.12)'}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${isPositive ? '#39d353' : '#ff6060'}" stroke-width="2"><polyline points="7 17 12 12 17 17"/><polyline points="7 12 12 7 17 12"/></svg></div><div class="tx-info"><div class="tx-name">${tx.name}</div><div class="tx-date">${tx.date}</div></div><div class="tx-amount ${isPositive ? 'positive' : ''}">${sign} ${absVal} ${currency}</div></div>`;
+      });
+    });
+    container.innerHTML = html;
   }
+
+  function updateUI() {
+    const balance = currentCard === 'uah' ? 7350 : 160;
+    const currency = currentCard === 'uah' ? 'UAH' : 'USD';
+    document.getElementById('balanceAmount').innerText = balance.toFixed(2);
+    document.getElementById('balanceCurrency').innerText = currency;
+    document.getElementById('balanceLabel').innerText = currentCard === 'uah' ? 'Баланс (UAH)' : 'Баланс (USD)';
+    renderHistory();
+  }
+
+  // Модальні вікна
+  const overlay = document.getElementById('modalOverlay');
+  function closeAllModals() {
+    document.querySelectorAll('.action-modal').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.profile-modal').forEach(m => m.classList.remove('open'));
+    overlay.classList.remove('open');
+  }
+  function openModal(modalId) {
+    closeAllModals();
+    const modal = document.getElementById(modalId);
+    if(modal) { modal.classList.add('open'); overlay.classList.add('open'); }
+  }
+  document.querySelectorAll('[data-modal]').forEach(el => {
+    el.addEventListener('click', (e) => { e.stopPropagation(); openModal(el.dataset.modal); });
+  });
+  overlay.addEventListener('click', closeAllModals);
+  document.querySelectorAll('.close-action').forEach(btn => { btn.addEventListener('click', closeAllModals); });
+  document.querySelectorAll('.action-modal button').forEach(btn => { btn.addEventListener('click', () => { closeAllModals(); alert('Демо-режим: платіж не виконано'); }); });
 
   // Профільне меню
   const avatarBtn = document.getElementById('avatarBtn');
   const profileModal = document.getElementById('profileModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
   const logoutFromModal = document.getElementById('logoutFromModalBtn');
-  const logoutOverlay = document.getElementById('logoutOverlay');
-  const appContent = document.getElementById('appContent');
+  const loginScreen = document.getElementById('loginScreen');
+  const appContentDiv = document.getElementById('appContent');
 
-  function openModal() { profileModal.classList.add('open'); }
-  function closeModal() { profileModal.classList.remove('open'); }
+  function openProfileModal() { profileModal.classList.add('open'); overlay.classList.add('open'); }
+  avatarBtn?.addEventListener('click', (e) => { e.stopPropagation(); openProfileModal(); });
+  closeModalBtn?.addEventListener('click', () => { profileModal.classList.remove('open'); overlay.classList.remove('open'); });
+  overlay.addEventListener('click', () => { profileModal.classList.remove('open'); closeAllModals(); });
 
-  avatarBtn?.addEventListener('click', (e) => { e.stopPropagation(); openModal(); });
-  closeModalBtn?.addEventListener('click', closeModal);
-  profileModal?.addEventListener('click', (e) => { if(e.target === profileModal) closeModal(); });
-
-  // Обробка пунктів меню: всі (крім вийти) видають технічну помилку
   document.querySelectorAll('.modal-menu-item[data-action]').forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showTechError();
-      closeModal();
-    });
+    item.addEventListener('click', (e) => { e.stopPropagation(); alert('Демо-режим: розділ у розробці'); profileModal.classList.remove('open'); overlay.classList.remove('open'); });
   });
 
-  // Вихід із акаунту через червону кнопку
-  if(logoutFromModal) {
-    logoutFromModal.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeModal();
-      // показуємо екран виходу
-      logoutOverlay.classList.remove('hidden');
-      appContent.style.opacity = '0.3';
-      appContent.style.pointerEvents = 'none';
-    });
-  }
+  // Вихід - показуємо екран логіну
+  logoutFromModal?.addEventListener('click', (e) => { e.stopPropagation(); profileModal.classList.remove('open'); overlay.classList.remove('open'); appContentDiv.style.display = 'none'; loginScreen.classList.remove('hidden'); });
 
-  // Інші клікабельні елементи
-  const clickableGeneral = document.querySelectorAll('.action-btn, .nav-tab, .qr-fab, .history-btn, .tx-item, .account-pill, .nav-icon, .bank-card, #moreTabBtn, .card-settings');
-  clickableGeneral.forEach(el => {
-    el.addEventListener('click', (e) => { e.stopPropagation(); showTechError(); });
+  // Вхід з будь-якими даними
+  document.getElementById('loginSubmitBtn').addEventListener('click', () => {
+    const phone = document.getElementById('loginPhone').value.trim();
+    const pwd = document.getElementById('loginPassword').value;
+    if(phone === "" && pwd === "") {
+      // дозволяємо порожні, але можна будь-які
+    }
+    loginScreen.classList.add('hidden');
+    appContentDiv.style.display = 'block';
+    document.getElementById('loginPhone').value = '';
+    document.getElementById('loginPassword').value = '';
   });
 
-  // Слайдер
+  // Слайдер карток
   const slider = document.getElementById('cardSlider');
-  const dots = document.querySelectorAll('.dot');
-  if(slider) {
-    slider.addEventListener('scroll', () => {
-      const card = slider.querySelector('.bank-card');
-      if(card) {
-        const idx = Math.round(slider.scrollLeft / (card.offsetWidth + 14));
-        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      }
-    });
+  const dotsContainer = document.getElementById('dotsContainer');
+  const cards = document.querySelectorAll('.bank-card');
+  function updateDots() {
+    const idx = Math.round(slider.scrollLeft / (cards[0]?.offsetWidth + 14 || 1));
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    if (cards[idx]) { currentCard = cards[idx].getAttribute('data-card-type'); updateUI(); }
   }
-  document.querySelectorAll('.nav-tab').forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      e.stopPropagation();
-      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    cards.forEach((_, i) => { const dot = document.createElement('div'); dot.classList.add('dot'); if(i===0) dot.classList.add('active'); dot.addEventListener('click',()=>{ slider.scrollTo({ left: i * (cards[0].offsetWidth + 14), behavior: 'smooth' }); }); dotsContainer.appendChild(dot); });
+  }
+  buildDots();
+  slider.addEventListener('scroll', updateDots);
+  updateUI();
+
+  // Додаткові кліки на транзакціях, кнопках історії, нижніх табах
+  document.querySelectorAll('.history-btn, .nav-tab, .tx-item, .account-pill, .nav-icon').forEach(el => {
+    el.addEventListener('click', (e) => { e.stopPropagation(); alert('Демо-режим: ця функція тимчасово недоступна'); });
   });
 </script>
 </body>
